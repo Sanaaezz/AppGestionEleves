@@ -1,13 +1,18 @@
 <?php
 
 use src\Controllers\HomeController;
-use src\Services\Routing;
-
-$HomeController = new HomeController;
 
 $route = $_SERVER['REDIRECT_URL'];
 $methode = $_SERVER['REQUEST_METHOD'];
-$routeComposee = Routing::routeComposee($route);
+
+$routeComposee = ltrim($route, HOME_URL);
+$routeComposee = rtrim($routeComposee, '/');
+
+$routeComposee = explode('/', $routeComposee);
+
+
+
+$HomeController = new HomeController;
 
 
 switch ($route) {
@@ -22,10 +27,10 @@ switch ($route) {
 
   case HOME_URL . 'connexion':
     if (isset($_SESSION['connecté'])) {
-      header('location: /dashboard');
+      header('location: ' . HOME_URL . 'dashboard');
       die;
     } else {
-      if ($methode === 'POST') {
+      if ($methode === 'GET') {
         $HomeController->auth($_POST['password']);
       } else {
         $HomeController->index();

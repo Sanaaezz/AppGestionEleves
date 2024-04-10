@@ -1,12 +1,19 @@
 <?php
-spl_autoload_register(function ($className) {
-  $fileName = str_replace('\\', '/', $className) . '.php';
-  $filePath = __DIR__ . '/' . $fileName;
+
+function ChargerClasses($classe)
+{
   try {
-    if (file_exists($filePath)) {
-      require_once $filePath;
+    if(str_contains($classe, "src")){
+      $classe = str_replace('src', '', $classe);
+      $classe = str_replace('\\', '/', $classe);
+      require_once __DIR__. $classe . ".php";
     }
-  } catch (Error $error) {
-    echo "Une erreur est survenue : " . $error->getMessage();
+    else {
+      throw new Error("La classe $classe est introuvable.");
+    }
+  } catch (Error $e) {
+    echo "Une erreur est survenue : " . $e->getMessage();
   }
-});
+}
+
+spl_autoload_register('ChargerClasses');

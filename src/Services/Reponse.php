@@ -25,6 +25,6 @@ trait Reponse
     if (!isset($action)) {
       $action = '';
     }
-    include_once __DIR__ . '/../Views' . $view . ".php";
+    include_once __DIR__ . '/../Views/' . $view . ".php";
   }
 }
