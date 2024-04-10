@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App Gestion</title>
   
-<link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../Public/asset/style.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" defer></script>
 
@@ -20,7 +20,7 @@
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand">SIMPLON</a>
-      <button class=" d-flex btn btn-outline-success deconnexion" type="submit">Deconnexion</button>
+      <a class=" d-flex btn btn-outline-success deconnexion" href="./deconnexion.php">Deconnexion</a>
       
     </div>
   </nav>

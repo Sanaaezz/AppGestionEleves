@@ -1,6 +1,7 @@
 <?php
 
-// define('DB_HOST', 'localhost');
-// define('DB_NAME', 'app_gestion_ap');
-// define('DB_USER', 'app_gestion_ap');
-// define('DB_PWD', 'app_gestion_ap');
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'briefapp');
+define('DB_USER', 'briefapp');
+define('DB_PWD', 'briefapp');
+define('HOME_URL', '/');
