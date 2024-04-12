@@ -2,13 +2,13 @@
 <div class="">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link " id="acceuil-tab" data-toggle="tab" href="accueilView.php" role="tab" aria-selected="false">Acceuil</a>
+      <a class="nav-link " id="acceuil-tab" data-toggle="tab" href="accueil.php" role="tab" aria-selected="false">Acceuil</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="promo-tab" data-toggle="tab" href="promotionsView.php" role="tab" aria-selected="false">Promotions</a>
+      <a class="nav-link" id="promo-tab" data-toggle="tab" href="promotions.php" role="tab" aria-selected="false">Promotions</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" id="utilisateurs-tab" data-toggle="tab" href="utilisateursView.php" role="tab" aria-selected="true">Utilisateurs</a>
+      <a class="nav-link active" id="utilisateurs-tab" data-toggle="tab" href="utilisateurs.php" role="tab" aria-selected="true">Utilisateurs</a>
     </li>
   </ul>
 </div>

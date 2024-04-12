@@ -13,9 +13,11 @@ a revoir
     </li>
   </ul>
 </div> -->
+
+
 <div class="tab-content" id="myTabContent">
   <!-- <div class="tab-pane fade show active" id="acceuil" role="tabpanel" aria-labelledby="acceuil-tab"> -->
-    <div class="tab-pane fade show" id="acceuil" role="tabpanel" aria-labelledby="acceuil-tab">
+    <div class="tab-pane fade show" id="accueil" role="tabpanel" aria-labelledby="accueil-tab">
       <h2>Cours du jour</h2>
       <div class="d-flex flex-column">
         <p>date du cours</p>
@@ -25,7 +27,7 @@ a revoir
         <input type="text" name="codeCours" id="codecours">
       </div>
       <div>
-        bouton faire inter en JS
+<!--_________________ JS a faire ____________________-->
         <button>Valider presence</button>
         <button>Signatures en cours</button>
         <button>Signatures recueillies</button>
