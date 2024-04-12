@@ -16,7 +16,7 @@
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand">SIMPLON</a>
-      <a class=" d-flex btn btn-outline-success deconnexion" href="./deconnexion.php">Deconnexion</a>
+      <a class=" d-flex btn btn-outline-success deconnexion">Deconnexion</a>
 
     </div>
   </nav>

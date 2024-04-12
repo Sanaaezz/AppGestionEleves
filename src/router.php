@@ -21,25 +21,27 @@ switch ($route) {
       $HomeController->index();
     }
     break;
-
-  case HOME_URL . 'dashboard':
-    $HomeController->dash();
-    break;
-
-  case HOME_URL . 'connexion':
-    if (isset($_SESSION['connecté'])) {
-      header('location: ' . HOME_URL . 'dashboard');
-      die;
-    } else {
-      if ($methode === 'GET') {
-        $HomeController->auth($_POST['password']);
+    
+    case HOME_URL . 'connexion':
+      if (isset($_SESSION['connecté'])) {
+        header('location: ' . HOME_URL . 'dashboard');
+        die;
       } else {
-        $HomeController->index();
+        if ($methode === 'GET') {
+          $HomeController->auth($_POST['password']);
+        } else {
+          $HomeController->index();
+        }
       }
-    }
-    break;
+      break;
+      
+      case HOME_URL . 'dashboard':
+        $HomeController->dash();
+        break;
 
-  case HOME_URL . 'deconnexion':
-    $HomeController->quit();
-    break;
-}
+
+      case HOME_URL . 'deconnexion':
+        $HomeController->quit();
+        break;
+      }
+      

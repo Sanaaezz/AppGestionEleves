@@ -3,8 +3,7 @@ namespace src\Repositories;
 
 use PDO;
 use src\Models\Database;
-use src\Models\Utilisateur as ModelsUtilisateur;
-use Utilisateur;
+use src\Models\Utilisateur;
 
 class UtilisateurRepository
 {
@@ -19,7 +18,8 @@ $this->DB = $database->getDB();
 require_once __DIR__ . '/../Models/Database.php';
 }
 
-  public function getUtilisateurbyEmail(string $email)
+  public function getUtilisateurbyEmail($email) : Utilisateur
+  
   {
     $sql = "SELECT * FROM aga_utilisateur WHERE Email = :email";
 
@@ -32,14 +32,14 @@ require_once __DIR__ . '/../Models/Database.php';
     return $retour;
   }
 
-  public function getUtilisateurbyId()
+  public function getUtilisateurbyId($IdUtilisateur)
   {
     $sql = "SELECT * FROM aga_utilisateur WHERE id_utilisateur = :idUtilisateur";
 
     $statement = $this->DB->prepare($sql);
-    $statement->bindParam(':idUtilisateur');
+    $statement->bindParam(':idUtilisateur', $IdUtilisateur);
     $statement->execute();
-    $statement->setFetchMode(PDO::FETCH_CLASS, ModelsUtilisateur::class);
+    $statement->setFetchMode(PDO::FETCH_CLASS, Utilisateur::class);
     $retour = $statement->fetch();
 
     return $retour;
