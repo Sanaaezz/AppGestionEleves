@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Models;
+
 Class Cours{
   private $id_cours;
   private $nom_cours;

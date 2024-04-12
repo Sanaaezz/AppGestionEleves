@@ -4,8 +4,10 @@ function ChargerClasses($classe)
 {
   try {
     if(str_contains($classe, "src")){
+      
       $classe = str_replace('src', '', $classe);
       $classe = str_replace('\\', '/', $classe);
+
       require_once __DIR__. $classe . ".php";
     }
     else {
@@ -17,3 +19,6 @@ function ChargerClasses($classe)
 }
 
 spl_autoload_register('ChargerClasses');
+
+
+

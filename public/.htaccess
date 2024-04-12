@@ -1,7 +1,21 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine on
-  RewriteCond %{REQUEST_URI} !\.(.*)$ [NC]
-  RewriteRule   (.*)  /index.php
+# <IfModule mod_rewrite.c>
+#   RewriteEngine on
+#   RewriteCond %{REQUEST_URI} !\.(.*)$ [NC]
+#   RewriteRule   (.*)  /index.php
 
-  ErrorDocument 404 /page-introuvable
+#   ErrorDocument 404 /page-introuvable
+# </IfModule>
+
+<IfModule mod_rewrite.c>
+
+  RewriteEngine on
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteCond %{REQUEST_URI} !\.(css|js|jpg|png|jpeg|webp|svg|gif|pdf|eot|otf|woff|woff2|ttf)$ [NC] 
+
+  RewriteRule ^(.*)$ /index.php [L]
+
 </IfModule>
+
+## Retour d'erreur :
+ErrorDocument 404 /page-introuvable

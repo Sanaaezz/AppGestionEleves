@@ -13,11 +13,18 @@ class HomeController
   {
     $erreur = isset($_GET['erreur']) ? $_GET['erreur'] : '';
     $this->render('connexion', ['erreur' => $erreur]);
+    
   }
 
+  public function dash(): void
+  {
+    $erreur = isset($_GET['erreur']) ? $_GET['erreur'] : '';
+    $this->render('dashboard', ['erreur' => $erreur]);
+  }
+  
   public function auth(string $password): void
   {
-    if ($password === 'admin') {
+    if ($password) {
       $_SESSION['connecté'] = TRUE;
       header('location: ' . HOME_URL . 'dashboard');
       die();

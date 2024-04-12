@@ -2,8 +2,10 @@
 
 namespace src\Models;
 
+use Exception;
 use PDO;
 use PDOException;
+// verifier le \ devant PDO
 
 final class Database
 {
@@ -18,6 +20,9 @@ final class Database
     $this->connexionDB();
   }
 
+
+
+
   private function connexionDB(): void
   {
     try {
@@ -25,6 +30,7 @@ final class Database
       $this->DB = new PDO($dsn, DB_USER, DB_PWD);
       
     } catch (PDOException $error) {
+      // throw new Exception( "erreur:" . $error->getMessage());
       echo "Quelque chose s'est mal passé : " . $error->getMessage();
     }
   }

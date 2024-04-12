@@ -1,7 +1,4 @@
-<?php
 
-include __DIR__ . '/Includes/header.php';
-?>
 <div class="">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">

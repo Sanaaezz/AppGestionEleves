@@ -1,4 +1,5 @@
 <?php
+namespace src\Models;
 
 Class Role{
   private $id_role;

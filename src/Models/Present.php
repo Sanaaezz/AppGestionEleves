@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Models;
+
 Class Present{
   private $id_utilisateur;
   private $id_cours;

@@ -1,3 +1,3 @@
-function connexion(){
-  
-}
+// document.getElementById("inConnexion").addEventListener('click',(e) =>
+// e.preventDefault
+// )

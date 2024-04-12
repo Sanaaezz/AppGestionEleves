@@ -3,6 +3,7 @@ namespace src\Repositories;
 
 use PDO;
 use src\Models\Database;
+use src\Models\Utilisateur as ModelsUtilisateur;
 use Utilisateur;
 
 class UtilisateurRepository
@@ -38,7 +39,7 @@ require_once __DIR__ . '/../Models/Database.php';
     $statement = $this->DB->prepare($sql);
     $statement->bindParam(':idUtilisateur');
     $statement->execute();
-    $statement->setFetchMode(PDO::FETCH_CLASS, Utilisateur::class);
+    $statement->setFetchMode(PDO::FETCH_CLASS, ModelsUtilisateur::class);
     $retour = $statement->fetch();
 
     return $retour;

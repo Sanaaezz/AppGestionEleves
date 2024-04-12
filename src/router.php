@@ -2,18 +2,15 @@
 
 use src\Controllers\HomeController;
 
+// var_dump($_SERVER);
 $route = $_SERVER['REDIRECT_URL'];
 $methode = $_SERVER['REQUEST_METHOD'];
 
 $routeComposee = ltrim($route, HOME_URL);
 $routeComposee = rtrim($routeComposee, '/');
-
 $routeComposee = explode('/', $routeComposee);
 
-
-
 $HomeController = new HomeController;
-
 
 switch ($route) {
   case HOME_URL:
@@ -23,6 +20,10 @@ switch ($route) {
     } else {
       $HomeController->index();
     }
+    break;
+
+  case HOME_URL . 'dashboard':
+    $HomeController->dash();
     break;
 
   case HOME_URL . 'connexion':

@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+namespace src\Models;
 
 Class Appartenir{
   private $id_promo;

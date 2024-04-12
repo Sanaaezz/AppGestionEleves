@@ -1,5 +1,7 @@
 <?php
 
+namespace src\Models;
+
 Class Promo{
   private $id_promo;
   private $nom_promo;
