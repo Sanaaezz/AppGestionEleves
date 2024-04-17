@@ -6,7 +6,6 @@ use PDO;
 use src\Models\Database;
 use src\Models\Utilisateur;
 
-var_dump($_POST);
 
 class UtilisateurRepository
 {
@@ -17,11 +16,10 @@ class UtilisateurRepository
   {
     $database = new Database;
     $this->DB = $database->getDB();
-
-    require_once  "../Models/Database.php";
   }
 
-  public function getUtilisateurbyEmail($email): Utilisateur{
+  public function getUtilisateurbyEmail($email): Utilisateur
+  {
     $sql = "SELECT * FROM aga_utilisateur WHERE email_utilisateur = :email";
 
     $statement = $this->DB->prepare($sql);
@@ -33,7 +31,8 @@ class UtilisateurRepository
     return $retour;
   }
 
-  public function getUtilisateurbyId($IdUtilisateur) {
+  public function getUtilisateurbyId($IdUtilisateur)
+  {
     $sql = "SELECT * FROM aga_utilisateur WHERE id_utilisateur = :idUtilisateur";
 
     $statement = $this->DB->prepare($sql);
@@ -45,9 +44,17 @@ class UtilisateurRepository
     return $retour;
   }
 
+  public function login($email, $password)
+  {
+    $sql = "SELECT * FROM aga_utilisateur
+        WHERE email_utilisateur = :email_utilisateur AND  mdp_utilisateur = :mdp_utilisateur";
 
+    $statement = $this->DB->prepare($sql);
+    $statement->execute([
+      ":email_utilisateur" => $email,
+      ":mdp_utilisateur" => $password
 
-
-
-
+    ]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+  }
 }

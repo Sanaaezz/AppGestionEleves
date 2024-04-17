@@ -1,4 +1,4 @@
-
+<section class="utilisateursSection">
 <div class="">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
@@ -8,7 +8,7 @@
       <a class="nav-link" id="promo-tab" data-toggle="tab" href="promotions.php" role="tab" aria-selected="false">Promotions</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" id="utilisateurs-tab" data-toggle="tab" href="utilisateurs.php" role="tab" aria-selected="true">Utilisateurs</a>
+      <a class="nav-link active" id="utilisateurs-tab" data-toggle="tab" href="" role="tab" aria-selected="true">Utilisateurs</a>
     </li>
   </ul>
 </div>
@@ -17,3 +17,4 @@
   <div class="tab-pane fade" id="promotions" role="tabpanel" aria-labelledby="promo-tab">...</div>
   <div class="tab-pane fade show active" id="utilisateurs" role="tabpanel" aria-labelledby="utilisateurs-tab">...</div>
 </div>
+</section>

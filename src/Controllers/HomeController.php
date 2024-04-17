@@ -50,24 +50,6 @@ class HomeController
   // }
 
 
-  public function auth()
-  {
-    if (isset($_POST['email']) && isset($_POST['password'])) {
-      $utilisateurRepo = new UtilisateurRepository;
-
-      $utilisateur = $utilisateurRepo->getUtilisateurbyEmail($_POST['email']);
-
-      if ($utilisateur && password_verify($_POST['password'], $utilisateur->getMdpUtilisateur())) {
-        $_SESSION['connecté'] = true;
-        $_SESSION['utilisateur'] = serialize($utilisateur);
-        header('location: ' . HOME_URL . 'dashboard');
-        exit;
-      } else {
-        header('location: ' . HOME_URL . 'connexion?erreur=denied');
-      }
-    }
- 
-  }
 
   public function quit(): void
   {

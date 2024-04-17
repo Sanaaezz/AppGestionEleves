@@ -15,7 +15,7 @@ final class Database
   public function __construct()
   {
     $this->config = __DIR__ . '/../../config.php';
-    require_once $this->config ;
+    require_once $this->config;
 
     $this->connexionDB();
   }
@@ -28,9 +28,7 @@ final class Database
     try {
       $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME;
       $this->DB = new PDO($dsn, DB_USER, DB_PWD);
-      echo"database";
     } catch (PDOException $error) {
-      // throw new Exception( "erreur:" . $error->getMessage());
       echo "Quelque chose s'est mal passé : " . $error->getMessage();
     }
   }
@@ -38,8 +36,5 @@ final class Database
   public function getDB()
   {
     return $this->DB;
- 
   }
-
-
 }
