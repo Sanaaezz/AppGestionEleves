@@ -22,7 +22,7 @@
     <div class="container-fluid">
       <a class="navbar-brand">SIMPLON</a>
       <!-- <a class=" d-flex btn btn-outline-success Inscription" href="<= HOME_URL?>inscription">Inscription</a> -->
-      <a class=" d-flex btn btn-outline-success deconnexion" >Deconnexion</a>
+      <a class=" d-flex btn btn-outline-success deconnexion" href="<?=HOME_URL?>connexion" >Deconnexion</a>
 
     </div>
   </nav>

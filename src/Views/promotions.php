@@ -54,9 +54,9 @@ $promoRepo = new PromoRepository;
                 <td><?= $promo->getDateFinPromo() ?></td>
                 <td><?= $promo->getNombrePromo() ?></td>
                 <td>
-                  <a href=" "> Voir </a>
+                  <a href=""> Voir </a>
                   <a href=""> Editer </a>
-                  <a href="" >Supprimer </a>
+                  <a href=""> Supprimer </a>
                 </td>
               </tr>
 
@@ -71,20 +71,22 @@ $promoRepo = new PromoRepository;
 
       <!-- ______________creation d'une promotion ___________-->
       <div class="d-flex flex-column CreaPromo">
-        <h2>Creation d'une promotion</h2>
 
-        <label for="">Nom de la promotion</label>
-        <input type="text">
+          <h2>Creation d'une promotion</h2>
 
-        <label for="">Date de début</label>
-        <input type="date">
+          <label for="">Nom de la promotion</label>
+          <input type="text" <?= $promo->getNomPromo() ?>>
 
-        <label for="">Date de fin</label>
-        <input type="date">
+          <label for="">Date de début</label>
+          <input type="date" <?= $promo->getDateDebutPromo() ?>>
 
-        <label for="">Place(s) disponible(s)</label>
-        <input type="nomber">
+          <label for="">Date de fin</label>
+          <input type="date" <?= $promo->getDateFinPromo() ?>>
 
+          <label for="">Place(s) disponible(s)</label>
+          <input type="nomber" <?= $promo->getNombrePromo() ?>>
+
+          <button>Creer</button>
 
       </div>
 

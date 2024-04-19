@@ -53,8 +53,8 @@ class HomeController
 
   public function quit(): void
   {
-    session_destroy();
     header('location: ' . HOME_URL .'connexion');
+    session_destroy();
   }
 
   public function page404(): void {

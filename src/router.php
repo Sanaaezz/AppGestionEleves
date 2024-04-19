@@ -39,13 +39,14 @@ switch ($route) {
     break;
 
 
-    // case HOME_URL . 'dashboard':
-    //   $HomeController->dash();
-    //   break;
+    case HOME_URL :
+    header('location: ' . HOME_URL . 'connexion');
+      break;
 
 
   case HOME_URL . 'deconnexion':
     $HomeController->quit();
+
     break;
 
   case $routeComposee[0] == 'dashboard':

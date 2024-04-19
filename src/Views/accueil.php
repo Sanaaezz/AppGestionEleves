@@ -1,8 +1,11 @@
 <?php
 
+use src\Models\Promo;
 use src\Repositories\CoursRepository;
+use src\Repositories\PromoRepository;
 
 $coursRepo = new CoursRepository;
+
 ?>
 
 <section id="accueilSection">
@@ -19,23 +22,18 @@ $coursRepo = new CoursRepository;
       </li>
     </ul>
   </div>
+  
 
-
-
+  
   <div class="tab-pane fade show active m-4" id="acceuil" role="tabpanel" aria-labelledby="acceuil-tab">
-
+    
     <div class="tab-pane fade show mx-auto" id="accueil" role="tabpanel" aria-labelledby="accueil-tab">
+      
+
       <h2>Cours du jour</h2>
-
-      <?php
-      $cours = $coursRepo->getAllCours();
-      foreach ($cours as $cour) {
-
-
-      ?>
         <div class="d-flex flex-column">
           <p>date du cours</p>
-          <h3>nom de la promo - creneau du cours</h3>
+          <h3> Nom promo - creneau du cours</h3>
           <p>nombre de participants</p>
           <label for="codeCours">Code *</label>
           <input type="text" name="codeCours" id="codecours">
@@ -47,8 +45,6 @@ $coursRepo = new CoursRepository;
           <button class="btn btn-success" onclick="signatureRecueillies()">Signatures recueillies</button>
         </div>
 
-      <?php
-      }
-      ?>
+
     </div>
 </section>

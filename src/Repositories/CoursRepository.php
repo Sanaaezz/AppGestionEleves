@@ -31,17 +31,16 @@ class CoursRepository
     return $CoursArray;
   }
 
-  public function getCoursById()
+  public function getCoursById($id):Cours
   {
     $sql = "SELECT * FROM aga_cours WHERE id_promo = :id_cours ";
 
-    $stmt = $this->DB->prepare($sql);
-    $stmt->bindParam(':id_cours');
-    $stmt->execute();
-    $stmt->setFetchMode(PDO::FETCH_CLASS);
-    $retour = $stmt->fetch();
+    $statement = $this->DB->prepare($sql);
+    $statement->bindParam(':id_cours', $id);
+    $statement->execute();
+    $statement->setFetchMode(PDO::FETCH_CLASS, Cours::class);
+    return $statement->fetch();
 
-    return $retour;
   }
 
 

@@ -1,10 +1,7 @@
 <?php
 
-use src\Models\Database;
-
 include __DIR__ . "/Includes/header.php";
 // <?= HOME_URL>dashboard
-$db = new Database;
 
 ?>
 
